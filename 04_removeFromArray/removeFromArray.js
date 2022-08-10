@@ -1,8 +1,13 @@
-const removeFromArray = function(arr, args) {
-  let arr1  = [];
-  for (let e in args)
-      arr1.concat(arr.filter(ele => ele!=e));
-  return arr1;
+const removeFromArray = function(arr) {
+
+  if (typeof args === "number")
+    return arr.filter( (ele) => (ele!==args) );
+  else{
+    const args = Array.from(arguments);
+
+    return arr.filter((ele)=> (!args.includes(ele)) );
+  }
+
 };
 
 // Do not edit below this line
